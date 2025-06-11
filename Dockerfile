@@ -23,6 +23,12 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     libfontconfig1 \
     libfreetype6 \
+    libx11-6 \
+    libxext6 \
+    libxrandr2 \
+    libxinerama1 \
+    libxcursor1 \
+    libxi6 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /app/target/release/tracking-solution .

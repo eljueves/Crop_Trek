@@ -1,9 +1,9 @@
 use plotters::prelude::*;
-use crate::tracker::Detection;
+use crate::fileIO::{OutputObject};
 use std::fs;
 
 pub fn draw_frame(
-    tracked_objects: &[(usize, Detection)],
+    tracked_objects: &Vec<OutputObject>,
     frame_id: usize,
     vis_dir: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
@@ -22,8 +22,8 @@ pub fn draw_frame(
 
     chart.configure_mesh().disable_mesh().draw()?;
 
-    for (id, det) in tracked_objects {
-        let (x, y, w, h) = (det.x, det.y, det.width, det.height);
+    for det in tracked_objects {
+        let (id, x, y, w, h) = (det.id, det.x, det.y, det.width, det.height);
         let rect = Rectangle::new(
             [(x - w / 2.0, y - h / 2.0), (x + w / 2.0, y + h / 2.0)],
             ShapeStyle::from(&BLUE).stroke_width(1),

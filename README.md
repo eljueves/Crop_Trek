@@ -32,10 +32,7 @@ This project is a crop tracking system for agricultural robotics. It tracks obje
 ```bash
 docker build -t tracking-solution .
 
-docker run --rm -v $(pwd):/data tracking-solution \
-  --input /data/sample_input.json \
-  --output /data/tracking_output.json \
-  --vis-dir /data/visualization
+docker run -v $(pwd):/data tracking-solution --input /data/input_data.json --output /data/tracking_output.json --vis-dir /data/visualization
 
 
 ---
