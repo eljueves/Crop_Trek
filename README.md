@@ -14,20 +14,6 @@ This project is a crop tracking system for agricultural robotics. It tracks obje
 
 ---
 
-## 📁 Project Structure
-tracking-solution/
-├── src/
-│   ├── main.rs            # CLI + coordination
-│   ├── tracker.rs         # Tracking logic
-│   └── visualize.rs       # PNG visualization
-├── Cargo.toml
-├── Dockerfile
-├── sample_input.json      # Example input data
-├── tracking_output.json   # Output (generated after running)
-└── visualization/         # Output visualizations (PNG)
-
----
-
 ## ⚙️ Dependencies
 
 - Rust (`cargo`)
