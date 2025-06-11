@@ -1,0 +1,4 @@
+# Ignore temporary files
+visualization/
+
+.DS_Store
