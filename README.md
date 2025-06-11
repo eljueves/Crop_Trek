@@ -38,10 +38,6 @@ docker run --rm -v $(pwd):/data tracking-solution \
   --vis-dir /data/visualization
 
 
-	•	--input: Path to input JSON file
-	•	--output: Path to output JSON file
-	•	--vis-dir: Directory for PNG visualizations
-
 ---
 
 ## 🧪 Sample Input Format
