@@ -2,6 +2,8 @@
 
 This project is a crop tracking system for agricultural robotics. It tracks objects across video frames and assigns persistent IDs, even if an object temporarily disappears. It also visualizes the tracking process.
 
+The reason it's called Crop-trek was that I was hoping it could evolve in a interactive testing environment for detecting crops.
+
 ---
 
 ## 🚀 Features
