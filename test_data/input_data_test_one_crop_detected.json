@@ -1,0 +1,37 @@
+[
+    {
+      "frame_id": 0,
+      "timestamp": "2025-03-24T18:00:00.000000Z",
+      "detections": [
+        { "x": 0.4, "y": 0.4, "width": 0.05, "height": 0.05 }
+      ]
+    },
+    {
+      "frame_id": 1,
+      "timestamp": "2025-03-24T18:00:00.033000Z",
+      "detections": [
+        { "x": 0.41, "y": 0.4, "width": 0.05, "height": 0.05 }
+      ]
+    },
+    {
+      "frame_id": 2,
+      "timestamp": "2025-03-24T18:00:00.066000Z",
+      "detections": [
+        { "x": 0.42, "y": 0.41, "width": 0.05, "height": 0.05 }
+      ]
+    },
+    {
+      "frame_id": 3,
+      "timestamp": "2025-03-24T18:00:00.099000Z",
+      "detections": [
+        { "x": 0.43, "y": 0.41, "width": 0.05, "height": 0.05 }
+      ]
+    },
+    {
+      "frame_id": 4,
+      "timestamp": "2025-03-24T18:00:00.132000Z",
+      "detections": [
+        { "x": 0.44, "y": 0.42, "width": 0.05, "height": 0.05 }
+      ]
+    }
+  ]

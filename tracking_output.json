@@ -2,12 +2,28 @@
   {
     "frame_id": 0,
     "timestamp": "2025-03-24T18:00:00.000000Z",
-    "tracked_objects": []
+    "tracked_objects": [
+      {
+        "id": 0,
+        "x": 0.99,
+        "y": 0.4,
+        "width": 0.05,
+        "height": 0.05
+      }
+    ]
   },
   {
     "frame_id": 1,
     "timestamp": "2025-03-24T18:00:00.033000Z",
-    "tracked_objects": []
+    "tracked_objects": [
+      {
+        "id": 0,
+        "x": 1.0,
+        "y": 0.4,
+        "width": 0.05,
+        "height": 0.05
+      }
+    ]
   },
   {
     "frame_id": 2,
@@ -17,11 +33,27 @@
   {
     "frame_id": 3,
     "timestamp": "2025-03-24T18:00:00.099000Z",
-    "tracked_objects": []
+    "tracked_objects": [
+      {
+        "id": 0,
+        "x": 1.0,
+        "y": 0.4,
+        "width": 0.05,
+        "height": 0.05
+      }
+    ]
   },
   {
     "frame_id": 4,
     "timestamp": "2025-03-24T18:00:00.132000Z",
-    "tracked_objects": []
+    "tracked_objects": [
+      {
+        "id": 0,
+        "x": 0.99,
+        "y": 0.4,
+        "width": 0.05,
+        "height": 0.05
+      }
+    ]
   }
 ]

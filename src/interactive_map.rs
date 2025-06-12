@@ -1,4 +1,4 @@
-use crate::fileIO::OutputObject;
+use crate::file_io::OutputObject;
 use minifb::{Key, Window, WindowOptions};
 use std::time::Duration;
 

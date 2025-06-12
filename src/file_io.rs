@@ -32,13 +32,13 @@ pub struct OutputFrame {
     pub tracked_objects: Vec<OutputObject>,
 }
 
-pub fn parseInputFrameJSONFile(input_path: &String) ->  Vec<InputFrame> {
+pub fn parse_input_frames_json_file(input_path: &String) ->  Vec<InputFrame> {
     let binding = fs::read_to_string(input_path);
     let data = binding.as_ref().unwrap().as_str();
     serde_json::from_str(&data).unwrap_or(Vec::new())
 }
 
-pub fn generateOutputJSONFrom(output_frames: Vec<OutputFrame>, output_path: &String) {
+pub fn generate_output_json_from(output_frames: Vec<OutputFrame>, output_path: &String) {
     let output_json = serde_json::to_string_pretty(&output_frames).unwrap_or(String::new());
     fs::write(output_path, output_json);
 }

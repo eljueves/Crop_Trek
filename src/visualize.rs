@@ -1,5 +1,5 @@
 use plotters::prelude::*;
-use crate::fileIO::{OutputObject};
+use crate::file_io::{OutputObject};
 use std::fs;
 
 pub fn draw_frame(

@@ -1,14 +1,14 @@
 mod tracker;
 mod visualize;
 mod interactive_map;
-mod fileIO;
+mod file_io;
 
 use tracker::ObjectTracker;
 use visualize::draw_frame;
 use interactive_map::run_interactive_map_view;
-use fileIO::{InputFrame, OutputFrame, OutputObject, parseInputFrameJSONFile, generateOutputJSONFrom};
+use file_io::{InputFrame, OutputFrame, OutputObject, parse_input_frames_json_file, generate_output_json_from};
 
-use std::{env, error::Error};
+use std::{error::Error};
 use clap::Parser;
 
 #[derive(Parser, Debug)]
@@ -33,26 +33,26 @@ fn main() -> Result<(), Box<dyn Error>> {
     let output_path = &args.output;
     let vis_dir = &args.vis_dir;
 
-    let input_frames: Vec<InputFrame> = parseInputFrameJSONFile(input_path);
-
-    let mut tracker = ObjectTracker::new(3, 0.05);
+    let input_frames: Vec<InputFrame> = parse_input_frames_json_file(input_path);
     let mut output_frames = Vec::new();
-    let mut all_tracked_objects = Vec::new();
+    let all_tracked_objects = Vec::new();
 
+    
+    let mut tracker = ObjectTracker::new();
+    
     for frame in input_frames {
-        let tracked = tracker.update(&frame.detections, frame.frame_id);
-        let mut tracked_objects: Vec<OutputObject> = tracked
+        tracker.evaluate_frame(&frame);
+
+        let tracked_objects: Vec<OutputObject> = tracker.get_all_tracked_objects_in_frame(frame.frame_id)
             .into_iter()
-            .map(|(id, det)| OutputObject {
-                id: id,
-                x: det.x,
-                y: det.y,
-                width: det.width,
-                height: det.height,
+            .map(|obj| OutputObject {
+                id: obj.id,
+                x: obj.detection.x,
+                y: obj.detection.y,
+                width: obj.detection.width,
+                height: obj.detection.height,
             })
             .collect();
-
-        all_tracked_objects.append(&mut tracked_objects);
 
         draw_frame(&tracked_objects, frame.frame_id, vis_dir)?;
 
@@ -63,7 +63,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         });
     }
 
-    generateOutputJSONFrom(output_frames, output_path);
+    generate_output_json_from(output_frames, output_path);
 
     //Run interactive map
     if args.interactive {

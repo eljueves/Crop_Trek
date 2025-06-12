@@ -1,4 +1,6 @@
 # Ignore temporary files
 visualization/
+target
+Cargo.lock
 
 .DS_Store
